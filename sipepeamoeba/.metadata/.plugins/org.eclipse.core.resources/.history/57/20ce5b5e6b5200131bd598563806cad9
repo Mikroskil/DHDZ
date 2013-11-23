@@ -1,0 +1,14 @@
+package com.example.sipepeamoeba;
+
+import android.app.Activity;
+import android.os.Bundle;
+
+public class Pencarian_lokasi extends Activity {
+	
+	protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.tes);
+       
+        
+    }
+}

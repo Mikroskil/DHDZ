@@ -1,0 +1,123 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/about"
+    android:gravity="top"
+    android:orientation="vertical"
+    tools:context=".Login" >
+
+    <TextView
+        android:id="@+id/textView1"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="Welcome To"
+        android:textSize="25sp" />
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="SiPePeAMOeBA"
+        android:textColor="#0000ff"
+        android:textSize="35sp" />
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="Sistem Pencatatan Pemakaian Air Minum Online Berbasis Android"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:textStyle="italic" />
+
+    <TextView
+        android:id="@+id/textView4"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:text="Silahkan Masuk..."
+        android:textAppearance="?android:attr/textAppearanceMedium" 
+        android:textStyle="bold"
+        android:layout_marginTop="45sp"/>
+
+    <TableLayout
+        android:layout_width="210dp"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="30dp"
+        >
+
+        <TableRow
+            android:id="@+id/tableRow1"
+            android:layout_width="210dp"
+            android:layout_height="wrap_content" >
+            
+            <EditText
+        		android:id="@+id/editText1"
+        		android:layout_width="210dp"
+        		android:layout_height="wrap_content"
+        		android:hint="Nama Pengguna" 
+        		android:maxLines="1">
+				
+        		<requestFocus />
+    		</EditText>
+            
+            
+        </TableRow>
+
+        <TableRow
+            android:id="@+id/tableRow2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" >
+
+            <EditText
+                android:id="@+id/editText2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="textPassword" 
+                android:hint="password"/>
+
+        </TableRow>
+        
+
+            <TableLayout
+                android:layout_width="210dp"
+                android:layout_height="wrap_content" >
+
+                <TableRow
+                    android:id="@+id/tableRow3"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content" >
+                    
+                    
+                    <Button
+                android:id="@+id/button1"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.5"
+                android:text="Masuk" 
+                />
+
+                    <Button
+                        android:id="@+id/button1"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="0.5"
+                        android:text="Batal" />
+            
+                </TableRow>
+
+            </TableLayout>
+
+    </TableLayout>
+
+    <ImageView
+        android:id="@+id/imageView1"
+        android:layout_width="100dp"
+        android:layout_height="300dp"
+        android:src="@drawable/orang" 
+        android:layout_marginLeft="250sp"
+        android:layout_marginTop="-200sp"/>
+    
+</LinearLayout>

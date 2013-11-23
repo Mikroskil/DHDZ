@@ -1,0 +1,57 @@
+package com.example.sipepeamoeba;
+
+import android.os.Bundle;
+import android.app.Activity;
+import android.content.DialogInterface;
+import android.content.DialogInterface.OnClickListener;
+import android.view.Menu;
+import android.view.View;
+import android.widget.Button;
+import android.widget.EditText;
+
+public class Login extends Activity implements OnClickListener {
+
+	private EditText id,password;
+	private Button masuk,batal;
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        
+        setContentView(R.layout.activity_login);
+        
+        id = (EditText)findViewById(R.id.editId);
+        password= (EditText)findViewById(R.id.editPassword);
+        masuk = (Button)findViewById(R.id.btnMasuk);
+        batal = (Button)findViewById(R.id.btnBatal);
+        
+        masuk.setOnClickListener((android.view.View.OnClickListener) this);
+        
+    }
+    
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        // Inflate the menu; this adds items to the action bar if it is present.
+        getMenuInflater().inflate(R.menu.login, menu);
+        return true;
+    }
+
+
+	public void onClick(View v) {
+		// TODO Auto-generated method stub
+		if(v == masuk){
+			id.setText("");
+			password.setText("");
+		}
+		else if(v == batal){
+			finish();
+			
+		}
+	}
+
+	@Override
+	public void onClick(DialogInterface arg0, int arg1) {
+		// TODO Auto-generated method stub
+		
+	}
+    
+}

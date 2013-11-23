@@ -1,0 +1,4 @@
+INDEX VERSION 1.126+E:\sharing develop\ANDROID\sipepeamoeba\.metadata\.plugins\org.eclipse.jdt.core
+2625596913.index
+2339799710.index
+4131150523.index
