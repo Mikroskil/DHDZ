@@ -24,7 +24,7 @@
             android:layout_height="wrap_content" >
 
             <EditText
-                android:id="@+id/editText1"
+                android:id="@+id/editcari"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                  
@@ -34,7 +34,7 @@
             </EditText>
 
             <Button
-                android:id="@+id/btnCari"
+                android:id="@+id/btnShowLocation"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Cari" 
@@ -78,5 +78,13 @@
         android:text="Upload Foto Meteran" 
         android:gravity="center"
         android:layout_gravity="center"/>
+    <Button
+        android:id="@+id/btnLogout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Logout" 
+        android:gravity="center"
+        android:layout_gravity="center"/>
+    
      
 </LinearLayout>

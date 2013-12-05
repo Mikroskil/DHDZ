@@ -1,0 +1,36 @@
+package com.example.sipepeamoeba;
+
+import android.app.Activity;
+import android.content.Context;
+import android.content.Intent;
+import android.os.Bundle;
+import android.view.View;
+import android.view.View.OnClickListener;
+import android.widget.Button;
+
+public class Pencarian_lokasi extends Activity implements OnClickListener {
+	private final Context CONTEXT = this;
+	private Button cari,upload;
+	protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.pencarian_lokasi);
+        cari = (Button)findViewById(R.id.btnCari);
+        upload = (Button)findViewById(R.id.btnUpload);
+        
+        cari.setOnClickListener(this);
+        upload.setOnClickListener(this);
+        
+    }
+
+	@Override
+	public void onClick(View v) {
+		// TODO Auto-generated method stub
+		if(v == upload) {
+			Intent go = new Intent(CONTEXT, Upload_foto.class);
+			super.startActivity(go);
+			
+			
+		}
+			
+	}
+}

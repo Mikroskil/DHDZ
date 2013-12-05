@@ -14,13 +14,17 @@
         android:label="@string/app_name"
         android:theme="@style/AppTheme" >
         <activity
-            android:name="com.example.sipepeamoeba.Login"
+            android:name="com.example.sipepeamoeba.Utama"
             android:label="@string/app_name" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+        </activity>
+        <activity
+            android:name="com.example.sipepeamoeba.Login"
+            android:label="@string/app_name" >
         </activity>
         <activity
             android:name="com.example.sipepeamoeba.Pencarian_lokasi"
@@ -30,7 +34,12 @@
             android:name="com.example.sipepeamoeba.Upload_foto"
             android:label="@string/app_name" >
         </activity>
-        
+        <activity
+            android:name="com.example.sipepeamoeba.RegisterActivity"
+            android:label="@string/app_name" >
+        </activity>
     </application>
-
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />	
+	<uses-permission android:name="android.permission.INTERNET" />
+    
 </manifest>

@@ -114,5 +114,19 @@
             </TableLayout>
 
     </TableLayout>
-    
+    <TextView android:id="@+id/login_error"
+            		android:layout_width="fill_parent"
+            		android:layout_height="wrap_content"
+            		android:textColor="#e30000"
+            		android:padding="10dip"
+            		android:textStyle="bold"/>
+    <Button
+            android:id="@+id/btnLinkToRegisterScreen"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="40dip"
+            android:background="@null"
+            android:text="Tidak memiliki akun?, Register Sekarang!"
+            android:textColor="#21dbd4"
+            android:textStyle="bold" />
 </LinearLayout>
