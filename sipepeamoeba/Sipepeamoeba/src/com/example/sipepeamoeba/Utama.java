@@ -1,21 +1,43 @@
 package com.example.sipepeamoeba;
 
 
+import org.json.JSONException;
+import org.json.JSONObject;
+
+
 import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
+import android.os.AsyncTask;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 
+import library.DatabaseHandler;
 import library.UserFunctions;
 
 public class Utama extends Activity {
 	UserFunctions userFunctions;
 	Button btnLogout,btnShowLocation;
+	EditText id;
 	private final Context CONTEXT = this;
 	public GPSTracker gps;
+	
+	private TextView loginErrorMsg,editcarierror;
+	// JSON Respon Nama Nodes
+	private static String KEY_SUCCESS = "success";
+	private static String KEY_ERROR = "error";
+	private static String KEY_ERROR_MSG = "error_msg";
+	private static String KEY_ID = "id";
+	private static String KEY_LATITUTE = "latitute";
+	private static String KEY_LONGITUDE = "longitude";
+	private static Double CEK_LATITUTE = 0.0;
+	private static Double CEK_LONGITUDE = 0.0;
+	
+	
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -43,12 +65,22 @@ public class Utama extends Activity {
         	
         	
         	btnShowLocation = (Button)findViewById(R.id.btnShowLocation);
+        	id = (EditText)findViewById(R.id.editcari);
+        	editcarierror = (TextView)findViewById(R.id.cek_error);
+        	
+        			
             btnShowLocation.setOnClickListener(new View.OnClickListener() {
-    			
+            	
     			@Override
     			public void onClick(View v) {
-    				// TODO Auto-generated method stub
     				
+    				
+    				String kirimid = id.getText().toString();        
+    				
+    			    
+    				new MyAsyncTask().execute(kirimid);
+    				
+    			    
     				gps = new GPSTracker(CONTEXT);
     				
 //    	        	gps = new GPSTracker(this);
@@ -87,9 +119,66 @@ public class Utama extends Activity {
         	
         	
         }
-        
-        
-        
-        
+    }
+    
+	/*private class MyAsyncTask extends AsyncTask<String, Void, JSONObject> {
+	       
+        protected JSONObject doInBackground(String... params) {
+                UserFunctions userFunction = new UserFunctions();
+                if (params.length != 2)
+                        return null;
+                JSONObject json = userFunction.cekLokasi(params[0]);
+                return json;
+        }
+       
+        protected void onPostExecute(JSONObject json) {
+                try {
+            if (json != null && json.getString(KEY_SUCCESS) != null) {
+                loginErrorMsg.setText("");
+                String res = json.getString(KEY_SUCCESS);
+                double lat = Double.parseDouble(json.getString(KEY_LATITUTE));
+                double lon = Double.parseDouble(json.getString(KEY_LONGITUDE));
+                
+                if(Integer.parseInt(res) == 1){
+                    CEK_LATITUTE = lat;
+                    CEK_LONGITUDE = lon;
+                    Toast.makeText(getApplicationContext(), lat + " " +lon , Toast.LENGTH_LONG).show();
+                    
+                }else{
+                	Toast.makeText(getApplicationContext(), "Customer tidak ditemukan" , Toast.LENGTH_LONG).show();
+                }
+            }
+	        } catch (JSONException e) {
+	            e.printStackTrace();
+	        }
+        }
+	}*/
+    private class MyAsyncTask extends AsyncTask<String, Void, JSONObject> {
+	       
+        protected JSONObject doInBackground(String... params) {
+                UserFunctions userFunction = new UserFunctions();
+                if (params.length != 1)
+                        return null;
+                //JSONObject json = userFunction.loginUser(params[0], params[1]);
+                JSONObject json = userFunction.cekLokasi(params[0]);
+                return json;
+        }
+       
+        protected void onPostExecute(JSONObject json) {
+	        try {
+	        	editcarierror.setText(json.getString("latitute"));
+	        	//editcarierror.setText("a");
+	            /*if (json != null && json.getString(KEY_SUCCESS) != null) {
+	                
+	                String res = json.getString(KEY_SUCCESS);
+	                JSONObject json_user = json.getJSONObject("user");
+	                
+	                editcarierror.setText(json_user.getString("name"));
+	                
+	            }*/
+	        } catch (JSONException e) {
+	            e.printStackTrace();
+	        }
+        }
     }
 }

@@ -42,7 +42,7 @@ public class Pencarian_lokasi extends Activity implements OnClickListener {
 		else if(v == btnShowLocation){
 			
 			gps = new GPSTracker(this);
-
+			
 			// check if GPS enabled		
 	        if(gps.canGetLocation()){
 	        	
@@ -51,8 +51,8 @@ public class Pencarian_lokasi extends Activity implements OnClickListener {
 	        	
 	        	// \n is for new line
 	        	editcari.setText("lat:" + latitude);
-	        	
-	        	Toast.makeText(getApplicationContext(), "Your Location is - \nLat: " + latitude + "\nLong: " + longitude, Toast.LENGTH_LONG).show();	
+	        	Toast.makeText(getApplicationContext(), "Your  is - \nLat: " + latitude + "\nLong: " + longitude, Toast.LENGTH_LONG).show();	
+	        	//Toast.makeText(getApplicationContext(), "Your Location is - \nLat: " + latitude + "\nLong: " + longitude, Toast.LENGTH_LONG).show();	
 	        }else{
 	        	// can't get location
 	        	// GPS or Network is not enabled

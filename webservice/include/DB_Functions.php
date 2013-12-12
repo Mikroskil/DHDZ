@@ -39,7 +39,29 @@ class DB_Functions {
             return false;
         }
     }
-
+	
+	/**
+     * check customer
+     * returns customer details
+     */
+    public function isLocationExisted($id, $cek) {
+		if ($cek == 1){
+			$result = mysql_query("SELECT * from cust WHERE id = '$id'");
+			$no_of_rows = mysql_num_rows($result);
+			if ($no_of_rows > 0) {
+				// cust existed 
+				return true;
+			} else {
+				// cust not existed
+				return false;
+			}
+		}else{
+			$result = mysql_query("SELECT * FROM cust WHERE id = $id");
+            // return user details
+            return mysql_fetch_array($result);
+		}
+    }
+	
     /**
      * Get user by email and password
      */

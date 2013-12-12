@@ -13,12 +13,13 @@ public class UserFunctions {
 	
 	private JSONParser jsonParser;
 	
-	//private static String loginURL = "http://10.0.2.2/android_login_api/";
-	//private static String registerURL = "http://10.0.2.2/android_login_api/";
-	private static String loginURL = "http://192.168.43.121/android_login_api/";
-	private static String registerURL = "http://192.168.43.121/android_login_api/";
+	private static String loginURL = "http://10.0.2.2/android_login_api/";
+	private static String registerURL = "http://10.0.2.2/android_login_api/";
+	//private static String loginURL = "http://192.168.43.121/android_login_api/";
+	//private static String registerURL = "http://192.168.43.121/android_login_api/";
 		
 	private static String login_tag = "login";
+	private static String ceklokasi_tag = "ceklokasi";
 	private static String register_tag = "register";
 	
 	// constructor
@@ -41,6 +42,28 @@ public class UserFunctions {
 		// return json
 		// Log.e("JSON", json.toString());
 		return json;
+	}
+	
+	
+	public JSONObject cekLokasi(String id){
+		// Building Parameters
+				List<NameValuePair> params = new ArrayList<NameValuePair>();
+				params.add(new BasicNameValuePair("tag", ceklokasi_tag));
+				params.add(new BasicNameValuePair("id", id));
+				//params.add(new BasicNameValuePair("password", password));
+				JSONObject json = jsonParser.getJSONFromUrl(loginURL, params);
+				// return json
+				// Log.e("JSON", json.toString());
+				return json;
+		/*
+		// Building Parameters
+		List<NameValuePair> params = new ArrayList<NameValuePair>();
+		params.add(new BasicNameValuePair("tag", ceklokasi_tag));
+		params.add(new BasicNameValuePair("id", id));
+		JSONObject json = jsonParser.getJSONFromUrl(loginURL, params);
+		// return json
+		// Log.e("JSON", json.toString());
+		return json;*/
 	}
 	
 	/**

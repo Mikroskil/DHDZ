@@ -77,6 +77,25 @@ if (isset($_POST['tag']) && $_POST['tag'] != '') {
                 echo json_encode($response);
             }
         }
+    } else if ($tag == 'ceklokasi') {
+		
+        $id = $_POST['id'];
+
+        // check if location finded
+        if ($db->isLocationExisted($id,1)) {
+			$location = $db->isLocationExisted($id,2);
+            // user is already existed - success response
+            $response["success"] = 1;
+            $response["latitute"] = $location["latitute"];
+			$response["longitude"] = $location["longitude"];
+            echo json_encode($response);
+        } else {
+            // user doesn't existed - error response
+            $response["error"] = "error";
+            $response["error_msg"] = "customer doesn't exists";
+            echo json_encode($response);
+        }
+		
     } else {
         echo "Invalid Request";
     }

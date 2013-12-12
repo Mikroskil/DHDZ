@@ -13,11 +13,16 @@
 		<item value="false" key="isRegEx"/>
 		<item value="false" key="incremental"/>
 		<item value="false" key="wholeword"/>
-		<item value="Handler" key="selection"/>
+		<item value="loginErrorMsg" key="selection"/>
 		<list key="findhistory">
+			<item value="loginerrormsg"/>
+			<item value="adduser"/>
+			<item value="password"/>
+			<item value="name"/>
+			<item value="key_suc"/>
+			<item value="activity"/>
 			<item value="Handler"/>
 			<item value="database"/>
-			<item value="nama peng"/>
 		</list>
 		<list key="replacehistory">
 		</list>

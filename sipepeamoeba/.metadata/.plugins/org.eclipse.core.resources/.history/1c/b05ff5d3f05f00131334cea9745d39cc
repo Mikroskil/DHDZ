@@ -1,0 +1,162 @@
+package com.example.sipepeamoeba;
+
+
+import org.json.JSONException;
+import org.json.JSONObject;
+
+
+
+import android.app.Activity;
+import android.content.Context;
+import android.content.Intent;
+import android.os.AsyncTask;
+import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
+import android.widget.EditText;
+import android.widget.TextView;
+import android.widget.Toast;
+
+import library.UserFunctions;
+
+public class Utama extends Activity {
+	UserFunctions userFunctions;
+	Button btnLogout,btnShowLocation;
+	EditText id;
+	private final Context CONTEXT = this;
+	public GPSTracker gps;
+	
+	private TextView loginErrorMsg,editcarierror;
+	// JSON Respon Nama Nodes
+	private static String KEY_SUCCESS = "success";
+	private static String KEY_ERROR = "error";
+	private static String KEY_ERROR_MSG = "error_msg";
+	private static String KEY_ID = "id";
+	private static String KEY_LATITUTE = "latitute";
+	private static String KEY_LONGITUDE = "longitude";
+	private static Double CEK_LATITUTE = 0.0;
+	private static Double CEK_LONGITUDE = 0.0;
+	
+	
+    @Override
+    public void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        
+        
+            
+        // Cek status login di database
+        userFunctions = new UserFunctions();
+        if(userFunctions.isUserLoggedIn(getApplicationContext())){
+        	setContentView(R.layout.pencarian_lokasi);
+        	btnLogout = (Button) findViewById(R.id.btnLogout);
+        	
+        	btnLogout.setOnClickListener(new View.OnClickListener() {
+    			
+    			public void onClick(View arg0) {
+    				// TODO Auto-generated method stub
+    				userFunctions.logoutUser(getApplicationContext());
+    				Intent login = new Intent(getApplicationContext(), Login.class);
+    	        	login.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+    	        	startActivity(login);
+    	        	// tutup pencarian lokasi
+    	        	finish();
+    			}
+    		});
+        	
+        	
+        	btnShowLocation = (Button)findViewById(R.id.btnShowLocation);
+        	id = (EditText)findViewById(R.id.editcari);
+        	editcarierror = (TextView)findViewById(R.id.cek_error);
+        	
+        			
+            btnShowLocation.setOnClickListener(new View.OnClickListener() {
+            	
+    			@Override
+    			public void onClick(View v) {
+    				
+    				
+    				String kirimid = id.getText().toString();        
+    				editcarierror.setText(kirimid);
+    			    //new MyAsyncTask().execute(kirimid);
+    				UserFunctions userFunction = new UserFunctions();
+    				
+    			    JSONObject json = userFunction.loginUser("denny", "denkeypas");
+    			    try {
+    			    editcarierror.setText(json.getString(KEY_LATITUTE));
+    			    } catch (JSONException e) {
+    		            e.printStackTrace();
+    		        }
+    			    //tes comment
+    				/*gps = new GPSTracker(CONTEXT);
+    				
+//    	        	gps = new GPSTracker(this);
+
+    				// check if GPS enabled		
+    		        if(gps.canGetLocation()){
+    		        	
+    		        	double latitude = gps.getLatitude();
+    		        	double longitude = gps.getLongitude();
+    		        	
+    		        	// \n is for new line
+    		        	//editcari.setText("lat:" + latitude);
+    		        	
+    		        	Toast.makeText(getApplicationContext(), "Your Location is - \nLat: " + latitude + "\nLong: " + longitude, Toast.LENGTH_LONG).show();	
+    		        }else{
+    		        	// can't get location
+    		        	// GPS or Network is not enabled
+    		        	// Ask user to enable GPS/network in settings
+    		        	gps.showSettingsAlert();
+    		        }*/
+    			}
+    		});
+            
+            
+        }else{
+        	// apabila status tidak login muncul ke halaman login
+        	
+        	
+        	Intent login = new Intent(getApplicationContext(), Login.class);
+        	login.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+        	startActivity(login);
+        	
+        	
+        	// tutup pencarian lokasi
+        	finish();
+        	
+        	
+        }
+    }
+    
+	private class MyAsyncTask extends AsyncTask<String, Void, JSONObject> {
+	       
+        protected JSONObject doInBackground(String... params) {
+                UserFunctions userFunction = new UserFunctions();
+                if (params.length != 2)
+                        return null;
+                JSONObject json = userFunction.cekLokasi(params[0]);
+                return json;
+        }
+       
+        protected void onPostExecute(JSONObject json) {
+                try {
+            if (json != null && json.getString(KEY_SUCCESS) != null) {
+                loginErrorMsg.setText("");
+                String res = json.getString(KEY_SUCCESS);
+                double lat = Double.parseDouble(json.getString(KEY_LATITUTE));
+                double lon = Double.parseDouble(json.getString(KEY_LONGITUDE));
+                
+                if(Integer.parseInt(res) == 1){
+                    CEK_LATITUTE = lat;
+                    CEK_LONGITUDE = lon;
+                    Toast.makeText(getApplicationContext(), lat + " " +lon , Toast.LENGTH_LONG).show();
+                    
+                }else{
+                	Toast.makeText(getApplicationContext(), "Customer tidak ditemukan" , Toast.LENGTH_LONG).show();
+                }
+            }
+	        } catch (JSONException e) {
+	            e.printStackTrace();
+	        }
+        }
+}
+}
