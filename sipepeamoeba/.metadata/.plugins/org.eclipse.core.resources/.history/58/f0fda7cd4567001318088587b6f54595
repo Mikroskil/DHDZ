@@ -64,7 +64,7 @@ public class UserFunctions {
 		
 	}
 	
-	public JSONObject addpemakaian(String no_cus,String tanggal,String gambar,String stand_akhir,String petugas){
+	public JSONObject addpemakaian(String no_cus,String tanggal,String gambar,String stand_akhir){
 		// Building Parameters
 		List<NameValuePair> params = new ArrayList<NameValuePair>();
 		params.add(new BasicNameValuePair("tag", addpemakaian_tag));
@@ -72,7 +72,6 @@ public class UserFunctions {
 		params.add(new BasicNameValuePair("tanggal", tanggal));
 		params.add(new BasicNameValuePair("gambar", gambar));
 		params.add(new BasicNameValuePair("stand_akhir", stand_akhir));
-		params.add(new BasicNameValuePair("petugas", petugas));
 		//params.add(new BasicNameValuePair("password", password));
 		JSONObject json = jsonParser.getJSONFromUrl(loginURL, params);
 		// return json

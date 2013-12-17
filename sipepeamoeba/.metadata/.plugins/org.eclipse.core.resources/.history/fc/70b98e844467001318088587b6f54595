@@ -45,7 +45,6 @@ public class Utama extends Activity {
 	private static String KEY_NAMA = "nama";
 	private static Double latitute = 0.00;
 	private static Double longitude = 0.00;
-	private static String id_petugas = "";
 	
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -53,7 +52,6 @@ public class Utama extends Activity {
         // Cek status login di database
         userFunctions = new UserFunctions();
         if(userFunctions.isUserLoggedIn(getApplicationContext())){
-        	
         	setContentView(R.layout.pencarian_lokasi);
         	btnLogout = (Button) findViewById(R.id.btnLogout);
         	btnShowLocation = (Button)findViewById(R.id.btnShowLocation);
@@ -128,8 +126,6 @@ public class Utama extends Activity {
 			        		Intent upload_foto = new Intent(getApplicationContext(), Upload_foto.class);
 			            	upload_foto.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
 			            	upload_foto.putExtra("id_cust",  id.getText().toString());
-			            	upload_foto.putExtra("id_petugas",  id.getText().toString());
-			            	
 			            	startActivity(upload_foto);
 			            	
 			        	}
@@ -159,12 +155,10 @@ public class Utama extends Activity {
     
 	
     private void check_gps() {
-		
-		
-    	// TODO Auto-generated method stub
+		// TODO Auto-generated method stub
     	latitute = (double) (Math.round(gps.getLatitude() * 100.0) / 100.0);
     	longitude = (double) (Math.round(gps.getLongitude() * 100.0) / 100.0);
-    	tx_lokasi_ptgs.setText("Lokasi Anda  \nlatitute :" + latitute + "\nlongitude :" +longitude);
+    	tx_lokasi_ptgs.setText("Lokasi Anda  \nlatitute :" + latitute + "\nlongitude :" +longitude  );
 	}
 
 

@@ -2,12 +2,10 @@
 <qualifiedTypeNameHistroy>
 <fullyQualifiedTypeName name="android.content.DialogInterface.OnClickListener"/>
 <fullyQualifiedTypeName name="com.example.sipepeamoeba.Pencarian_lokasi"/>
-<fullyQualifiedTypeName name="android.content.Context"/>
 <fullyQualifiedTypeName name="android.R"/>
 <fullyQualifiedTypeName name="android.R.layout"/>
 <fullyQualifiedTypeName name="android.os.Bundle"/>
 <fullyQualifiedTypeName name="library.UserFunctions"/>
-<fullyQualifiedTypeName name="library.DatabaseHandler"/>
 <fullyQualifiedTypeName name="com.example.sipepeamoeba.GPSTracker"/>
 <fullyQualifiedTypeName name="com.example.sipepeamoeba.Login"/>
 <fullyQualifiedTypeName name="com.example.sipepeamoeba.R.layout"/>
@@ -34,7 +32,6 @@
 <fullyQualifiedTypeName name="java.text.DecimalFormat"/>
 <fullyQualifiedTypeName name="android.os.Environment"/>
 <fullyQualifiedTypeName name="java.io.ByteArrayOutputStream"/>
-<fullyQualifiedTypeName name="android.util.Base64"/>
 <fullyQualifiedTypeName name="android.view.View"/>
 <fullyQualifiedTypeName name="android.view.View.OnClickListener"/>
 <fullyQualifiedTypeName name="android.widget.TextView"/>
@@ -45,5 +42,8 @@
 <fullyQualifiedTypeName name="java.util.Calendar"/>
 <fullyQualifiedTypeName name="java.util.Date"/>
 <fullyQualifiedTypeName name="java.text.SimpleDateFormat"/>
+<fullyQualifiedTypeName name="android.util.Base64"/>
 <fullyQualifiedTypeName name="com.example.sipepeamoeba.Utama"/>
+<fullyQualifiedTypeName name="android.content.Context"/>
+<fullyQualifiedTypeName name="library.DatabaseHandler"/>
 </qualifiedTypeNameHistroy>

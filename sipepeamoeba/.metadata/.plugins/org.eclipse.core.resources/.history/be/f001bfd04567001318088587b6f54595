@@ -73,6 +73,7 @@ public class UserFunctions {
 		params.add(new BasicNameValuePair("gambar", gambar));
 		params.add(new BasicNameValuePair("stand_akhir", stand_akhir));
 		params.add(new BasicNameValuePair("petugas", petugas));
+		
 		//params.add(new BasicNameValuePair("password", password));
 		JSONObject json = jsonParser.getJSONFromUrl(loginURL, params);
 		// return json

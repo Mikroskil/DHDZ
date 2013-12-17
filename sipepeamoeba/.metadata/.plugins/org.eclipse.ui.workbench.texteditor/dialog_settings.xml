@@ -13,16 +13,16 @@
 		<item value="false" key="casesensitive"/>
 		<item value="false" key="incremental"/>
 		<item value="false" key="wholeword"/>
-		<item value="Date" key="selection"/>
+		<item value="Context" key="selection"/>
 		<list key="findhistory">
+			<item value="context"/>
+			<item value="btnup"/>
+			<item value="btnup\"/>
+			<item value="imgpre"/>
 			<item value="date"/>
 			<item value="latitute"/>
 			<item value="preview"/>
 			<item value="cek_e"/>
-			<item value="editcari"/>
-			<item value="edit"/>
-			<item value="btn"/>
-			<item value="loginerrormsg"/>
 		</list>
 		<list key="replacehistory">
 		</list>

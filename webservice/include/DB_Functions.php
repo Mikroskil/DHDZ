@@ -41,6 +41,48 @@ class DB_Functions {
     }
 	
 	/**
+     * Storing pemakaian
+     * returns user details
+     */
+    public function storePemakaian($no_cus, $tanggal, $gambar, $stand_akhir, $petugas) {
+		/* untuk nilai harga*/
+		$cust = mysql_fetch_array(mysql_query("select * from cust where id = '$no_cus'"));
+		$gol = $cust['gol'];
+		$query_pakai = mysql_query("select max(stand_akhir) stand_akhir from pemakaian where nomor_meter = '$no_cus'");
+		$pakai = mysql_fetch_array($query_pakai);
+		$admin = mysql_fetch_array(mysql_query("select biaya_admin from adm"));
+		$diameter = $cust['diameter_pipa'];
+		$pemeliharaan = mysql_fetch_array(mysql_query("select * from pemeliharaan where diameter_pipa = '$diameter'"));
+		$biaya_pemeliharaan = $pemeliharaan['biaya_pemeliharaan'];
+		$biaya_admin = $admin['biaya_admin'];
+		$no_of_rows = mysql_num_rows($query_pakai);
+		if ($no_of_rows > 0) {
+			$selisih = $stand_akhir - $pakai['stand_akhir'];
+			$stand_awal = $pakai['stand_akhir'];
+		} else {
+			$selisih = $stand_akhir;
+			$stand_awal = 0;
+		}
+		
+		$hitung = mysql_fetch_array(mysql_query("select * from golongan where '$selisih' between meter1 and meter2 and golongan = '$gol'"));
+		$biaya_pemakaian = $hitung['HARGA'] * $selisih;
+		$total_biaya = $biaya_pemakaian + $biaya_admin + $biaya_pemeliharaan;
+		/****/
+        $result = mysql_query("INSERT INTO pemakaian(nomor_meter, tanggal, gambar, stand_awal, stand_akhir,biaya_pemakaian,biaya_admin,biaya_pemeliharaan,total_biaya,id_petugas)
+								VALUES('$no_cus', '$tanggal', '$gambar', '$stand_awal', '$stand_akhir','$biaya_pemakaian','$biaya_admin','$biaya_pemeliharaan','$total_biaya','$petugas')");
+        // check for successful store
+        if ($result) {
+            // get user details 
+            $uid = mysql_insert_id(); // last inserted id
+            $result = mysql_query("SELECT * FROM pemakaian WHERE id_pemakaian = $uid");
+            // return user details
+            return mysql_fetch_array($result);
+        } else {
+            return false;
+        }
+    }
+	
+	/**
      * check customer
      * returns customer details
      */

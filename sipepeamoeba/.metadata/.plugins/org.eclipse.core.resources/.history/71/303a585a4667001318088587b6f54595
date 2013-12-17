@@ -27,6 +27,7 @@ import library.UserFunctions;
 
 public class Utama extends Activity {
 	UserFunctions userFunctions;
+	DatabaseHandler databaseHandler;
 	Button btnLogout,btnShowLocation,btnUpload;
 	EditText id;
 	private final Context CONTEXT = this;

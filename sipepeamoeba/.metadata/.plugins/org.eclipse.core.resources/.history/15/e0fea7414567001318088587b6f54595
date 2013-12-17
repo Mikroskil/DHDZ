@@ -27,6 +27,7 @@ import library.UserFunctions;
 
 public class Utama extends Activity {
 	UserFunctions userFunctions;
+	DatabaseHandler databaseHandler;
 	Button btnLogout,btnShowLocation,btnUpload;
 	EditText id;
 	private final Context CONTEXT = this;
@@ -159,7 +160,6 @@ public class Utama extends Activity {
     
 	
     private void check_gps() {
-		
 		
     	// TODO Auto-generated method stub
     	latitute = (double) (Math.round(gps.getLatitude() * 100.0) / 100.0);

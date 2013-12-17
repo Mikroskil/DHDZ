@@ -96,7 +96,7 @@ public class Upload_foto extends Activity {
 			    
 			    databaseHandler = new DatabaseHandler(CONTEXT);
 			    String petugas = databaseHandler.getUserDetails().get("name").toString();
-			   //tx_encode.setText(petugas);
+			   
 			    new MyAsyncTask().execute(no_cus, tanggal,gambar,stand_akhir,petugas);
 			    
 			    Intent utama = new Intent(getApplicationContext(), Utama.class);
@@ -241,9 +241,9 @@ public class Upload_foto extends Activity {
 	       
         protected JSONObject doInBackground(String... params) {
                 UserFunctions userFunction = new UserFunctions();
-                if (params.length != 5)
+                if (params.length != 4)
                         return null;
-                JSONObject json = userFunction.addpemakaian(params[0], params[1], params[2],params[3],params[4]);
+                JSONObject json = userFunction.addpemakaian(params[0], params[1], params[2],params[3]);
                 return json;
         }
        

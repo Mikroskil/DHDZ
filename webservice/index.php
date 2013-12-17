@@ -73,7 +73,7 @@ if (isset($_POST['tag']) && $_POST['tag'] != '') {
             } else {
                 // user failed to store
                 $response["error"] = 1;
-                $response["error_msg"] = "Error occured in Registartion";
+                $response["error_msg"] = "Error occured in Registration";
                 echo json_encode($response);
             }
         }
@@ -88,6 +88,7 @@ if (isset($_POST['tag']) && $_POST['tag'] != '') {
             $response["success"] = 1;
             $response["latitute"] = $location["latitute"];
 			$response["longitude"] = $location["longitude"];
+			$response["nama"] = $location["nama"];
             echo json_encode($response);
         } else {
             // user doesn't existed - error response
@@ -95,6 +96,27 @@ if (isset($_POST['tag']) && $_POST['tag'] != '') {
             $response["error_msg"] = "customer doesn't exists";
             echo json_encode($response);
         }
+		
+    }else if ($tag == 'addpemakaian') {
+		
+        $no_cus = $_POST['no_cus'];
+		$tanggal = $_POST['tanggal'];
+		$gambar = $_POST['gambar'];
+		$stand_akhir = $_POST['stand_akhir'];
+		$petugas = $_POST['petugas'];
+		// store pemakaian
+            $pemakaian = $db->storePemakaian($no_cus, $tanggal, $gambar, $stand_akhir, $petugas);
+            if ($pemakaian) {
+                // user stored successfully
+                $response["success"] = 1;
+                $response["uid"] = $pemakaian["id_pemakaian"];
+                echo json_encode($response);
+            } else {
+                // user failed to store
+                $response["error"] = 1;
+                $response["error_msg"] = "Error occured in Registration";
+                echo json_encode($response);
+            }
 		
     } else {
         echo "Invalid Request";
