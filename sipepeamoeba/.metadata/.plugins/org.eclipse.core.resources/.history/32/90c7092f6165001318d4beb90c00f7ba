@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/about"
+    android:orientation="vertical" >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="0.40"
+        android:gravity="center_horizontal"
+        android:orientation="vertical" >
+        <TextView android:id="@+id/tx_ket"
+            		android:layout_width="fill_parent"
+            		android:layout_height="wrap_content"
+            		android:textColor="#e30000"
+            		android:text="Id Customer :"
+            		android:padding="10dip"
+            		android:textStyle="bold"/>
+		<TextView android:id="@+id/tx_cust"
+            		android:layout_width="fill_parent"
+            		android:layout_height="wrap_content"
+            		android:textColor="#e30000"
+            		android:text=""
+            		android:padding="10dip"
+            		android:textStyle="bold"/>
+        <Button
+            android:id="@+id/btnambilgambar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="Ambil Gambar" />
+        
+		<ImageView
+            android:id="@+id/imgPreview"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:visibility="gone" />
+		<Button
+            android:id="@+id/btnsimpan"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="Simpan Gambar" />
+		<TextView android:id="@+id/tx_encode"
+            		android:layout_width="fill_parent"
+            		android:layout_height="wrap_content"
+            		android:textColor="#e30000"
+            		android:text="\n\n\n"
+            		android:padding="10dip"
+            		android:textStyle="bold"/>
+    </LinearLayout>
+
+</LinearLayout>

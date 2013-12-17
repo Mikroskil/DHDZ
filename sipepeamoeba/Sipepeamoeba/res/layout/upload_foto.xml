@@ -2,57 +2,70 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
-    android:background="@drawable/about" >
+    android:background="@drawable/about"
+    android:orientation="vertical" >
 
-    <TextView
-        android:id="@+id/textView3"
-        android:layout_width="wrap_content"
+    <LinearLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:gravity="center"
-        android:text="Sistem Pencatatan Pemakaian Air Minum Online Berbasis Android"
-        android:textAppearance="?android:attr/textAppearanceMedium"
-        android:textStyle="italic" />
+        android:layout_weight="0.40"
+        android:gravity="center_horizontal"
+        android:orientation="vertical" >
 
-    <TableLayout
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content" >
-
-        <TableRow
-            android:id="@+id/tableRow1"
+        <TextView
+            android:id="@+id/tx_ket"
             android:layout_width="fill_parent"
-            android:layout_height="wrap_content" >
+            android:layout_height="wrap_content"
+            android:padding="10dip"
+            android:text="Id Customer :"
+            android:textColor="#e30000"
+            android:textStyle="bold" />
 
-            <TextView
-                android:id="@+id/textView4"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Ambil Gambar. . ."
-                android:textAppearance="?android:attr/textAppearanceMedium" />
-            
-        </TableRow>
+        <TextView
+            android:id="@+id/tx_cust"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:padding="10dip"
+            android:text=""
+            android:textColor="#e30000"
+            android:textStyle="bold" />
 
-        <TableRow
-            android:id="@+id/tableRow2"
+        <Button
+            android:id="@+id/btnambilgambar"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content" >
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="Ambil Gambar" />
 
-            <ImageView
-                android:id="@+id/imageView1"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="-50sp"
-                android:src="@drawable/meter" />
+        <ImageView
+            android:id="@+id/imgPreview"
+            android:layout_width="121dp"
+            android:layout_height="106dp" />
 
-        </TableRow>
-  
-    </TableLayout>
-		<Button
-                android:id="@+id/button1"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Simpan Gambar" 
-                android:layout_gravity="center"
-                android:layout_marginTop="-40dp"
-                />
+		<TextView
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:text="Input Meteran" />
+		<!--  Name TextField -->
+        <EditText
+            android:id="@+id/edt_meter"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content" />
+        <Button
+            android:id="@+id/btnsimpan"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="Simpan Gambar" />
+
+        <TextView
+            android:id="@+id/tx_encode"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:padding="10dip"
+            android:text="\n\n\n"
+            android:textColor="#e30000"
+            android:textStyle="bold" />
+    </LinearLayout>
+
 </LinearLayout>

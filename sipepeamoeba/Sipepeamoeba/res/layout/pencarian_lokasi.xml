@@ -57,22 +57,27 @@
                 android:id="@+id/TextView01"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Tekan cari.."
+                android:text="Tekan cari"
                 android:textAppearance="?android:attr/textAppearanceMedium"
                 android:textStyle="italic" />
             
         </TableRow>
     
     </TableLayout>
-
-    <TextView
-        android:id="@+id/textView4"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Mendeteksi Lokasi..."
-        android:textAppearance="?android:attr/textAppearanceMedium"
-        android:textStyle="italic" />
-
+    <TextView android:id="@+id/tx_lokasi_ptgs"
+            		android:layout_width="fill_parent"
+            		android:layout_height="wrap_content"
+            		android:textColor="#e30000"
+            		android:text="\n\n\n"
+            		android:padding="10dip"
+            		android:textStyle="bold"/>
+	<TextView android:id="@+id/tx_lokasi_cust"
+            		android:layout_width="fill_parent"
+            		android:layout_height="wrap_content"
+            		android:textColor="#e30000"
+            		android:text="\n\n\n"
+            		android:padding="10dip"
+            		android:textStyle="bold"/>
     <Button
         android:id="@+id/btnUpload"
         android:layout_width="wrap_content"
@@ -87,11 +92,6 @@
         android:text="Logout" 
         android:gravity="center"
         android:layout_gravity="center"/>
-    <TextView android:id="@+id/cek_error"
-            		android:layout_width="fill_parent"
-            		android:layout_height="wrap_content"
-            		android:textColor="#e30000"
-            		android:padding="10dip"
-            		android:textStyle="bold"/>
+    
      
 </LinearLayout>
