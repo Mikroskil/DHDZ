@@ -1,0 +1,112 @@
+body  
+{
+	margin: 0;
+	padding: 1;
+	text-align: center;
+	background-color: #FFFFFF;
+	font-family: Helvetica, sans-serif;
+	font-size: 100%;
+	background-attachment: fixed;
+}
+.cssmenu
+{
+	border:none;
+	border:0px;
+	margin:0px;
+	padding:0px;
+	font: 67.5% Lucida Sans Unicode, Bitstream Vera Sans, Trebuchet Unicode MS, Lucida Grande, Verdana, Helvetica, sans-serif;
+	font-size:14px;
+	font-weight:bold;
+	top:auto;
+	position:relative;
+	
+}
+.cssmenu ul
+{
+	background: #0099FF;
+	height:100%;
+	list-style:none;
+	margin:0;
+	padding:0;
+}
+.cssmenu li
+{
+	float:left;
+	padding:4px;
+}
+.cssmenu li a{
+	background: #0066FF url('images/seperator.gif') bottom right no-repeat;
+	color:#ffffff;
+	display:block;
+	font-weight:normal;
+	line-height:35px;
+	margin:0px;
+	padding:1px 25px;
+	text-align:center;
+	text-decoration:none;
+	}
+.cssmenu li a:hover, .cssmenu ul li:hover a{
+	background: #e3e3e3 url('images/1.png') bottom center no-repeat;
+	color: #000000;
+	text-decoration:none;
+	}
+.cssmenu li ul{
+	background: #999999;
+	display:none;
+	height:auto;
+	padding:0px;
+	margin:0px;
+	border:2px;
+	position:absolute;
+	width:225px;
+	z-index:200;
+	}
+.cssmenu li:hover ul{
+	display:block;
+	
+	}
+.cssmenu li li {
+	background:url('images/sub_sep.gif') top right no-repeat;
+	display:block;
+	float:none;
+	margin:0px;
+	padding:0px;
+	width:225px;
+	}
+.cssmenu li:hover li a{
+	background:none;
+	}
+.cssmenu li ul a{
+	display:block;
+	height:35px;
+	font-size:12px;
+	font-style:normal;
+	margin:0px;
+	padding:0px 10px 0px 15px;
+	text-align:left;
+	}
+.cssmenu li ul a:hover, .cssmenu li ul li:hover a{
+	background:#666666 url('images/2.png') center left no-repeat;
+	border:0px;
+	color:#ffffff;
+	text-decoration:none;
+	}
+.a{
+	background:url('images/frame.png') top center no-repeat;
+	width:400px;
+	height:200px;
+}
+.b{
+	background:url('images/frame2.png') center right no-repeat;
+	width:700px;
+	height:500px;
+}
+
+.fontcolor{
+	color:#000000;
+	}
+
+#footer{
+	font-size:10px;
+	font-style:oblique;
+}
