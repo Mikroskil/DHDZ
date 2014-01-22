@@ -1,3 +1,6 @@
+<?php
+	session_start();
+?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
@@ -6,362 +9,54 @@
 <link rel="stylesheet" href="style.css" type="text/css" />
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <link rel="stylesheet" type="text/css" href="engine1/style.css" />
-
+<script src="func.js"></script>
 <script type="text/javascript" src="engine1/jquery.js"></script>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
 <style type="text/css">
 
 .style2 {color: #FF0000}
 
 </style>
-    
-<!-- fungsi ajax home-->
-<script type="text/javascript">
-function ajaxRun1(){
-	var xmlHttp;
-	var a;
-	if (window.XMLHttpRequest){
-		xmlHttp = new XMLHttpRequest();
-	}
-	else{
-		xmlHttp = new ActiveXObject("Microsoft.XMLHTTP");
-	}
-
-	xmlHttp.onreadystatechange = function(){
-		if(xmlHttp.readyState == 4 && xmlHttp.status == 200){
-			document.getElementById("main").innerHTML = xmlHttp.responseText;
-		}
-	}
-	xmlHttp.open("GET","FILE/beranda.html",true);
-	xmlHttp.send();
-
-}
-function ajaxRun2(){
-	var xmlHttp;
-	var a;
-	if (window.XMLHttpRequest){
-		xmlHttp = new XMLHttpRequest();
-	}
-	else{
-		xmlHttp = new ActiveXObject("Microsoft.XMLHTTP");
-	}
-
-	xmlHttp.onreadystatechange = function(){
-		if(xmlHttp.readyState == 4 && xmlHttp.status == 200){
-			document.getElementById("main").innerHTML = xmlHttp.responseText;
-		}
-	}
-	xmlHttp.open("GET","FILE/info.html",true);
-	xmlHttp.send();
-
-}
-function ajaxRun3(){
-	var xmlHttp;
-	var a;
-	if (window.XMLHttpRequest){
-		xmlHttp = new XMLHttpRequest();
-	}
-	else{
-		xmlHttp = new ActiveXObject("Microsoft.XMLHTTP");
-	}
-
-	xmlHttp.onreadystatechange = function(){
-		if(xmlHttp.readyState == 4 && xmlHttp.status == 200){
-			document.getElementById("main").innerHTML = xmlHttp.responseText;
-		}
-	}
-	xmlHttp.open("GET","FILE/simulasirek.html",true);
-	xmlHttp.send();
-
-}
-
-function ajaxRun4(){
-	var xmlHttp;
-	var a;
-	if (window.XMLHttpRequest){
-		xmlHttp = new XMLHttpRequest();
-	}
-	else{
-		xmlHttp = new ActiveXObject("Microsoft.XMLHTTP");
-	}
-
-	xmlHttp.onreadystatechange = function(){
-		if(xmlHttp.readyState == 4 && xmlHttp.status == 200){
-			document.getElementById("main").innerHTML = xmlHttp.responseText;
-		}
-	}
-	xmlHttp.open("GET","FILE/sejarahpdam.html",true);
-	xmlHttp.send();
-
-}
-
-function ajaxRun5(){
-	var xmlHttp;
-	var a;
-	if (window.XMLHttpRequest){
-		xmlHttp = new XMLHttpRequest();
-	}
-	else{
-		xmlHttp = new ActiveXObject("Microsoft.XMLHTTP");
-	}
-
-	xmlHttp.onreadystatechange = function(){
-		if(xmlHttp.readyState == 4 && xmlHttp.status == 200){
-			document.getElementById("main").innerHTML = xmlHttp.responseText;
-		}
-	}
-	xmlHttp.open("GET","FILE/visimisi.html",true);
-	xmlHttp.send();
-
-}
-function ajaxRun6(){
-	var xmlHttp;
-	var a;
-	if (window.XMLHttpRequest){
-		xmlHttp = new XMLHttpRequest();
-	}
-	else{
-		xmlHttp = new ActiveXObject("Microsoft.XMLHTTP");
-	}
-
-	xmlHttp.onreadystatechange = function(){
-		if(xmlHttp.readyState == 4 && xmlHttp.status == 200){
-			document.getElementById("main").innerHTML = xmlHttp.responseText;
-		}
-	}
-	xmlHttp.open("GET","FILE/tujuanweb.html",true);
-	xmlHttp.send();
-
-}
-function ajaxRun7(){
-	var xmlHttp;
-	var a;
-	if (window.XMLHttpRequest){
-		xmlHttp = new XMLHttpRequest();
-	}
-	else{
-		xmlHttp = new ActiveXObject("Microsoft.XMLHTTP");
-	}
-
-	xmlHttp.onreadystatechange = function(){
-		if(xmlHttp.readyState == 4 && xmlHttp.status == 200){
-			document.getElementById("main").innerHTML = xmlHttp.responseText;
-		}
-	}
-	xmlHttp.open("GET","FILE/kritikdansaran.html",true);
-	xmlHttp.send();
-
-}
-function ajaxRun8(){
-	var xmlHttp;
-	var a;
-	if (window.XMLHttpRequest){
-		xmlHttp = new XMLHttpRequest();
-	}
-	else{
-		xmlHttp = new ActiveXObject("Microsoft.XMLHTTP");
-	}
-
-	xmlHttp.onreadystatechange = function(){
-		if(xmlHttp.readyState == 4 && xmlHttp.status == 200){
-			document.getElementById("main").innerHTML = xmlHttp.responseText;
-		}
-	}
-	xmlHttp.open("GET","FILE/pengaduan.html",true);
-	xmlHttp.send();
-
-}
-function ajaxRun9(){
-	var xmlHttp;
-	var a;
-	if (window.XMLHttpRequest){
-		xmlHttp = new XMLHttpRequest();
-	}
-	else{
-		xmlHttp = new ActiveXObject("Microsoft.XMLHTTP");
-	}
-
-	xmlHttp.onreadystatechange = function(){
-		if(xmlHttp.readyState == 4 && xmlHttp.status == 200){
-			document.getElementById("main").innerHTML = xmlHttp.responseText;
-		}
-	}
-	xmlHttp.open("GET","FILE/daftar.html",true);
-	xmlHttp.send();
-
-}
-function ajaxRun10(){
-	var xmlHttp;
-	var a;
-	if (window.XMLHttpRequest){
-		xmlHttp = new XMLHttpRequest();
-	}
-	else{
-		xmlHttp = new ActiveXObject("Microsoft.XMLHTTP");
-	}
-
-	xmlHttp.onreadystatechange = function(){
-		if(xmlHttp.readyState == 4 && xmlHttp.status == 200){
-			document.getElementById("berita").innerHTML = xmlHttp.responseText;
-		}
-	}
-	xmlHttp.open("GET","FILE/berita PDAM/berita1.html",true);
-	xmlHttp.send();
-
-}
-function ajaxRun11(){
-	var xmlHttp;
-	var a;
-	if (window.XMLHttpRequest){
-		xmlHttp = new XMLHttpRequest();
-	}
-	else{
-		xmlHttp = new ActiveXObject("Microsoft.XMLHTTP");
-	}
-
-	xmlHttp.onreadystatechange = function(){
-		if(xmlHttp.readyState == 4 && xmlHttp.status == 200){
-			document.getElementById("berita").innerHTML = xmlHttp.responseText;
-		}
-	}
-	xmlHttp.open("GET","FILE/berita PDAM/berita2.html",true);
-	xmlHttp.send();
-
-}
-function ajaxRun12(){
-	var xmlHttp;
-	var a;
-	if (window.XMLHttpRequest){
-		xmlHttp = new XMLHttpRequest();
-	}
-	else{
-		xmlHttp = new ActiveXObject("Microsoft.XMLHTTP");
-	}
-
-	xmlHttp.onreadystatechange = function(){
-		if(xmlHttp.readyState == 4 && xmlHttp.status == 200){
-			document.getElementById("berita").innerHTML = xmlHttp.responseText;
-		}
-	}
-	xmlHttp.open("GET","FILE/page1berita.html",true);
-	xmlHttp.send();
-
-}
-function ajaxRun13(){
-	var xmlHttp;
-	var a;
-	if (window.XMLHttpRequest){
-		xmlHttp = new XMLHttpRequest();
-	}
-	else{
-		xmlHttp = new ActiveXObject("Microsoft.XMLHTTP");
-	}
-
-	xmlHttp.onreadystatechange = function(){
-		if(xmlHttp.readyState == 4 && xmlHttp.status == 200){
-			document.getElementById("berita").innerHTML = xmlHttp.responseText;
-		}
-	}
-	xmlHttp.open("GET","FILE/page2berita.html",true);
-	xmlHttp.send();
-
-}
-function ajaxRun14(){
-	var xmlHttp;
-	var a;
-	if (window.XMLHttpRequest){
-		xmlHttp = new XMLHttpRequest();
-	}
-	else{
-		xmlHttp = new ActiveXObject("Microsoft.XMLHTTP");
-	}
-
-	xmlHttp.onreadystatechange = function(){
-		if(xmlHttp.readyState == 4 && xmlHttp.status == 200){
-			document.getElementById("berita").innerHTML = xmlHttp.responseText;
-		}
-	}
-	xmlHttp.open("GET","FILE/berita PDAM/berita5.html",true);
-	xmlHttp.send();
-
-}
-function ajaxRun15(){
-	var xmlHttp;
-	var a;
-	if (window.XMLHttpRequest){
-		xmlHttp = new XMLHttpRequest();
-	}
-	else{
-		xmlHttp = new ActiveXObject("Microsoft.XMLHTTP");
-	}
-
-	xmlHttp.onreadystatechange = function(){
-		if(xmlHttp.readyState == 4 && xmlHttp.status == 200){
-			document.getElementById("berita").innerHTML = xmlHttp.responseText;
-		}
-	}
-	xmlHttp.open("GET","FILE/berita PDAM/berita4.html",true);
-	xmlHttp.send();
-
-}
-/*fungsi simulasi*/
-	function hapusHasil(){
-		document.getElementById("hasil").innerHTML="";
-	}
-	function getHasil(){
-		var arr = new Array();
-		arr[0] = new Array(900,900,1000,2000,2600,3300,2100,2900,4600,4900,6000);
-		arr[1] = new Array(900,900,1600,3600,4600,6000,3800,5300,7200,7500,9600);
-		arr[2] = new Array(900,1400,2300,5700,7400,9400,6000,8700,10700,11300,13300);
-		arr[3] = new Array(1300,2900,5500,8800,10700,12600,8500,12600,14400,14300,16300);
-		
-		for(var i=0;i<6 ;i++){
-		if(document.getElementsByName("ukuran")[i].checked)
-		var a = document.getElementsByName("ukuran")[i].value;
-		}
-		a=Number(a);
-		
-		for(var i=0;i<4;i++){
-			for(var j=0;j<11;j++){
-				if(document.getElementsByName("pemakaian")[i].checked && document.getElementsByName("gol")[j].checked){
-					var b = arr[i][j];
-					break;
-					}
-				}
-			}
-			b = Number(b)
-			var hasil = a+b+10000;
-			hasil = numberWithCommas(hasil);
-		document.getElementById("hasil").style.fontWeight='bold';
-		document.getElementById("hasil").innerHTML="Rp. " + hasil;
-	}
-	
-	function numberWithCommas(x) {
-    	var parts = x.toString().split(".");
-	    parts[0] = parts[0].replace(/\B(?=(\d{3})+(?!\d))/g, ",");
-    	return parts.join(".");
-}
-/*function komen*/
-function abc()
-{
-	alert("pengaduan anda telah sukses!");
-	document.getElementById("nama").disabled=true;
-	document.getElementById("alamat").disabled=true;
-	document.getElementById("email").disabled=true;
-	document.getElementById("noHp").disabled=true;
-	document.getElementById("noMeter").disabled=true;
-	document.getElementById("komentar").disabled=true;
-	document.getElementById("noPengaduan").value="12345";
-	document.getElementById("noPengaduan").style.fontWeight='bold';
-	document.getElementById("noPengaduan").style.textAlign="center";
-}
-</script>
+<?php
+	include('connect.php');   
+	include('input.php');
+	mysql_close($connect);
+?>
 </head>
 
 <body style="background-color:#F2F2F2">
-
 <div class="header">
 <table width="70%" align="center">
-<tr><td><img src="GAMBAR/header1.jpg"></td></tr>
+	<tr>
+		<td><div id="admin" ><?php
+				if (isset($_SESSION['logged-in'] ) && $_SESSION['logged-in']==true) {
+					$user = $_SESSION['username'];
+			    	echo "Welcome, " . $user . "!";
+					?>
+					<script type="text/javascript">
+						document.getElementById("admin").style.visibility='visible';
+					</script>
+					<?php
+				} 
+				
+				else{
+				?>	
+					<script type="text/javascript">
+					document.getElementById("admin").style.visibility='hidden';
+					</script>
+					<?php
+					}
+					?>
+					
+			<form method="post" action="logout.php">
+				<input type="submit" value="Logut" />
+			</form>
+			</div>
+			</td>
+	</div></tr>
+	<tr>
+		<td><img src="GAMBAR/header1.jpg"></td>
+	</tr>
 </table>
 </div>
 
@@ -374,24 +69,24 @@ function abc()
                 	<li class='active'>
                     <a href="beranda.php">
                     <span>&nbsp;&nbsp;Beranda&nbsp;&nbsp;</span></a></li>
-              			<li><a href='#' onclick="ajaxRun2()"><span>Informasi</span></a>
+              			<li><a href="#" onclick="ajaxRun4('FILE/info.php','','','')"><span>Informasi</span></a>
                     		<ul>
-                      			<li><a href="#" onclick="ajaxRun2()"><span>Cek Pemakaian</span></a></li>
-                      			<li><a href="#" onclick="ajaxRun3()"><span>Informasi Perhitungan(Golongan)</span></a></li>
+                      			<li><a href="#" onclick="ajaxRun4('FILE/info.php','','','')"><span>Cek Pemakaian</span></a></li>
+                      			<li><a href="#" onclick="ajaxRun('FILE/simulasi.php')"><span>Informasi Perhitungan(Golongan)</span></a></li>
                     		</ul>
                			</li>
-                		<li><a href="#" onclick="ajaxRun4()"><span>Tentang Kami</span></a>
+                		<li><a href="#" onclick="ajaxRun('FILE/sejarahpdam.html')"><span>Tentang Kami</span></a>
                         	<ul>
-                      			<li><a href="#" onclick="ajaxRun4()"><span>Sejarah</span></a></li>
-                      			<li><a href="#" onclick="ajaxRun5()"><span>Visi Misi</span></a></li>
-                      			<li><a href="#" onclick="ajaxRun6()"><span>Tujuan Website</span></a></li>
-                      			<li><a href="#" onclick="ajaxRun7()"><span>Kritik dan Saran</span></a></li>
+                      			<li><a href="#" onclick="ajaxRun('FILE/sejarahpdam.html')"><span>Sejarah</span></a></li>
+                      			<li><a href="#" onclick="ajaxRun('FILE/visidanmisi.html')"><span>Visi Misi</span></a></li>
+                      			<li><a href="#" onclick="ajaxRun('FILE/tujuanweb.html')"><span>Tujuan Website</span></a></li>
+                      			<li><a href="#" onclick="ajaxRun('FILE/kritikdansaran.php')"><span>Kritik dan Saran</span></a></li>
                     		</ul>
                          </li>
-              			<li><a href="#" onclick="ajaxRun8()"><span>Pengaduan</span></a>
+              			<li><a href="#" onclick="ajaxRun2('FILE/pengaduan.php','')"><span>Pengaduan</span></a>
                     		<ul>
-                      			<li><a href="#" onclick="ajaxRun8()"><span>Pengaduan Pelanggan</span></a></li>
-                      			<li><a href="#" onclick="ajaxRun9()"><span>Daftar Pengaduan</span></a></li>
+                      			<li><a href="#" onclick="ajaxRun2('FILE/pengaduan.php','')"><span>Pengaduan Pelanggan</span></a></li>
+                      			<li><a href="#" onclick="ajaxRun('FILE/daftar.php')"><span>Daftar Pengaduan</span></a></li>
                     		</ul>
                			</li>
    	 		  </ul>
@@ -441,8 +136,8 @@ function abc()
             <td width="86%" height="34"><font color="#000000" face="Bookman Old Style" size="+1">&nbsp;&nbsp;Berita Terkini</font></td>
             <td width="14%"><table align="center">
                 <tr>
-                  <td align="center" width="50%" bgcolor="#FFFFFF"><a href="#" onclick="ajaxRun12()"><img src="GAMBAR/Left-Arrow.gif" width="23" height="24"></a></td>
-                  <td align="center" width="50%" bgcolor="#FFFFFF"><a href="#" onclick="ajaxRun13()"><img src="GAMBAR/Right_Arrow.gif" width="23" height="24"></a></td>
+                  <td align="center" width="50%" bgcolor="#FFFFFF"><a href="#" onclick="ajaxRun('FILE/page1berita.html')"><img src="GAMBAR/Left-Arrow.gif" width="23" height="24"></a></td>
+                  <td align="center" width="50%" bgcolor="#FFFFFF"><a href="#" onclick="ajaxRun('FILE/page2berita.html')"><img src="GAMBAR/Right_Arrow.gif" width="23" height="24"></a></td>
                 </tr>
             </table></td>
           </tr>
@@ -454,7 +149,7 @@ function abc()
                   <td width="30%" height="223" align="center" valign="middle" bordercolor="#999999" bgcolor="#FFFFFF"><img src="GAMBAR/index.jpg" width="143" height="175" border="1" align="middle"></td>
                   <td width="70%" align="justify" valign="top"><p><font color="#000000" face="Times New Roman"><strong>PDAM Tirtanadi Bangun Sumur Bor Kapasitas 15 Liter per Detik</strong>3</font></p>
                       <p><font color="#000000" face="Times New Roman" size="-1">Perusahaan Daerah Air Minum (PDAM) Tirtanadi Provinsi Sumatera Utara juga sedang melakukan pembangunan sumur bor di Cabang Tuasan. Kacab PDAM Tirtanadi Cabang Tuasan, M.Yusuf Pohan, SE, MM kepada wartawan saat peninjauan menjelaskan, pembangunan sumur bor kapasitas 10 liter hingga 15/detik ini baru dilaksanakan sebulan lalu.</font></p>
-                    <span class="style2"><font color="#FF0000"><a href="#" onclick="ajaxRun10()">Selanjutnya &gt;&gt;</a></font></span>
+                    <span class="style2"><font color="#FF0000"><a href="#" onclick="ajaxRun('FILE/berita PDAM/berita1.html')">Selanjutnya &gt;&gt;</a></font></span>
                     <p>&nbsp;</p></td>
                 </tr>
                 <tr>
@@ -464,7 +159,7 @@ function abc()
                         <p>Dalam beberapa hari ke depan pasokan air dari PDAM Tirtanadi akan terganggu. Kepala Divisi Public Relations, Amrun, mengatakan, gangguan itu terjadi dalam rangka optimalisasi pengoperasian WTP Mini di Tanjung Gusta.</p>
                         <p>Pekerjaan perbaikan dilaksanakan Selasa (1/10/2013) dan diperkirakan akan selesai pada 5 Oktober 2013. Selama lima hari pelaksanaan pekerjaan tersebut, WTP Mini Jalan Kelambir V akan stop produksi.</p>
                       </font>
-                      <span class="style2"><font color="#FF0000"><a href="#" onclick="ajaxRun11()">Selanjutnya &gt;&gt;</a></font></span>
+                      <span class="style2"><font color="#FF0000"><a href="#" onclick="ajaxRun('FILE/berita PDAM/berita2.html')">Selanjutnya &gt;&gt;</a></font></span>
                     <p>&nbsp;</p></td>
                 </tr>
             </table>
